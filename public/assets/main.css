@@ -3,7 +3,7 @@
 :root {
     --max-page-width: 1920px;
     --page-width: 1440px;
-    --container-width: 1240px;
+    --container-width: 1140px;
 
     --main-text-size: 16px;
 
@@ -17,8 +17,23 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
+    min-width: 320px;
     font-family: 'Montserrat', 'sans-serif';
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
 }
 
 .container {
@@ -177,9 +192,18 @@ h2 {
 
 
 /* ROUTES */
+.routes {
+    max-width: var(--max-page-width);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .routes h2 {
     max-width: 326px;
+    margin-bottom: 100px;
 }
+
 /* SWIPER */
 .swiper {
     max-width: var(--page-width);
@@ -188,9 +212,7 @@ h2 {
 }
 
 .swiper-slide {
-    transition:
-        transition 0.3s,
-        opacity 0.3s;
+    transition: .3s;
 }
 
 .swiper-slide img {
@@ -202,8 +224,16 @@ h2 {
     transform: translateY(-10%) !important;
 }
 
-.swiper-slide-next, .swiper-slide-prev {
+.swiper-slide {
     opacity: .5;
+}
+
+.swiper-slide img {
+    border-radius: 12px;
+}
+
+.swiper-slide-active {
+    opacity: 1;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -219,10 +249,6 @@ h2 {
 
 
 /* NEWS */
-.news {
-
-}
-
 .news .container {
     max-width: 850px;
 }
@@ -245,11 +271,29 @@ h2 {
     object-fit: cover;
 }
 
+.news-content {
+    max-width: 385px;
+}
+
+.news-content a {
+    color: var(--subtitle-color);
+}
+
+
+/* REVIEW */
+.review-content__wrapper {
+    text-align: center;
+}
+
+.review-content__wrapper .stars {
+    margin-top: 15px;
+}
+
 
 /* FEEDBACK */
 .feedback-content__wrapper {
     display: flex;
-    gap: 63px;
+    justify-content: space-between;
 }
 
 .feedback-form__wrapper {
@@ -270,14 +314,10 @@ h2 {
     resize: none;
 }
 
-
-/* REVIEW */
-.review-content__wrapper {
-    text-align: center;
-}
-
-.review-content__wrapper .stars {
-    margin-top: 15px;
+.map {
+    max-width: 616px;
+    width: 100%;
+    background-color: #D9D9D9;
 }
 
 
@@ -285,11 +325,12 @@ h2 {
 .footer {
     color: var(--white-color);
     max-width: var(--max-page-width);
+    width: 100%;
     text-align: center;
     font-size: var(--main-text-size);
     font-weight: 500;
     background-color: var(--accent-color);
-    padding: 50px;
+    padding: 50px 0;
     margin-right: auto;
     margin-left: auto;
 }

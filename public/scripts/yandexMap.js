@@ -9,7 +9,7 @@ async function initMap() {
     // Иницилиазируем карту
     const map = new YMap(
         // Передаём ссылку на HTMLElement контейнера
-        document.getElementById('map'),
+        document.querySelector('.map'),
 
         // Передаём параметры инициализации карты
         {
@@ -26,3 +26,5 @@ async function initMap() {
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
 }
+
+
