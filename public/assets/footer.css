@@ -1,0 +1,13 @@
+/* FOOTER */
+.footer {
+    color: var(--white-color);
+    max-width: var(--max-page-width);
+    width: 100%;
+    text-align: center;
+    font-size: var(--main-text-size);
+    font-weight: 500;
+    background-color: var(--accent-color);
+    padding: 50px 0;
+    margin-right: auto;
+    margin-left: auto;
+}

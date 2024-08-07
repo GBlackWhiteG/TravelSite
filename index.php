@@ -1,4 +1,4 @@
-<?php require 'incs/header.php' ?>
+<?php require 'app/views/incs/header.php' ?>
     <main>
         <section class="company">
             <div class="container">
@@ -120,4 +120,4 @@
             </div>
         </section>
     </main>
-<?php require 'incs/footer.php' ?>
+<?php require 'app/views/incs/footer.php' ?>

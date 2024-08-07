@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./public/assets/main.css">
+    <link rel="stylesheet" type="text/css" href="./public/assets/header.css">
+    <link rel="stylesheet" type="text/css" href="./public/assets/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>Путешествия по России :: Главная</title>
 </head>
@@ -15,12 +17,12 @@
     <nav class="nav">
         <div class="container">
             <div class="nav-items__wrapper">
-                <a href="#">Logo</a>
+                <a href="/">Logo</a>
                 <div class="nav-items">
-                    <a href="#">Главная</a>
-                    <a href="../routes.php">Маршруты</a>
-                    <a href="#">Отзывы</a>
-                    <a href="#">Новости</a>
+                    <a href="/">Главная</a>
+                    <a href="../../../routes.php">Маршруты</a>
+                    <a href="../../../reviews.php">Отзывы</a>
+                    <a href="../../../news.php">Новости</a>
                 </div>
                 <a href="#">Вход</a>
             </div>
@@ -28,7 +30,7 @@
     </nav>
     <header class="header">
         <div class="header__wrapper">
-            <img src="./public/img/main.jpg" alt="Главное изображение" class="main-image">
+            <img class="main-image" src="./public/img/main.jpg" alt="Главное изображение">
             <h1><span>путешествия по</span><br>россии</h1>
             <form class="header-inputs__wrapper">
                 <input type="text" placeholder="Дата">
