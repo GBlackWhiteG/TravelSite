@@ -1,4 +1,4 @@
-<?php require 'app/views/incs/header.php' ?>
+<?php require '../app/views/incs/header.php' ?>
 <div class="main-wrapper">
     <main>
         <section class="news-page">
@@ -18,5 +18,5 @@
             </div>
         </section>
     </main>
-    <?php require 'app/views/incs/footer.php' ?>
+    <?php require '../app/views/incs/footer.php' ?>
 </div>

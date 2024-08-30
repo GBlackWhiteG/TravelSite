@@ -33,4 +33,6 @@ $comments_data = [
     ],
 ];
 
-require_once 'app/views/reviews.blade.php';
+$pageTitle = 'Путешествия по России :: Отзывы';
+
+require_once VIEWS . '/reviews.blade.php';

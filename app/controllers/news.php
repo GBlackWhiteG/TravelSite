@@ -33,4 +33,6 @@ $news_data = [
     ],
 ];
 
-require_once 'app/views/news.blade.php';
+$pageTitle = 'Путешествия по России :: Новости';
+
+require_once '../app/views/news.blade.php';

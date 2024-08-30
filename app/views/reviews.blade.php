@@ -1,4 +1,4 @@
-<?php require 'app/views/incs/header.php' ?>
+<?php require VIEWS . '/incs/header.php' ?>
 <div class="main-wrapper">
     <main>
         <section class="reviews-page">
@@ -25,5 +25,5 @@
             </div>
         </section>
     </main>
-    <?php require 'app/views/incs/footer.php' ?>
+    <?php require VIEWS . '/incs/footer.php' ?>
 </div>
