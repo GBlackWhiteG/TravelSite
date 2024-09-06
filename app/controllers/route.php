@@ -4,6 +4,8 @@
  * @var Db $db
  */
 
+use core\classes\Db;
+
 $id = $_GET['id'] ?? 0;
 
 $route = $db->query("SELECT * FROM routes WHERE id = ? LIMIT 1", [$id])->findOrFail();

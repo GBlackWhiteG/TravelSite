@@ -1,3 +1,4 @@
+<?php require VIEWS . '/incs/nav.php' ?>
 <?php require VIEWS . '/incs/header.php' ?>
 
 <main>

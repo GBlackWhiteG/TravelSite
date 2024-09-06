@@ -1,3 +1,4 @@
+<?php require VIEWS . '/incs/nav.php' ?>
 <?php require VIEWS . '/incs/header.php' ?>
 <div class="main-wrapper">
     <main>
@@ -7,7 +8,7 @@
                 <ul class="reviews-grid-layout">
                     <?php foreach ($comments_data as $comment) : ?>
                     <li class="reviews-item">
-                        <div class="avatar-wrapper"><img src="<?= $comment['img-src'] ?>" alt="avatar-img"></div>
+                        <div class="avatar-wrapper"><img src="<?= $comment['img_url'] ?>" alt="avatar-img"></div>
                         <div class="text-block__reviews">
                             <p><?= $comment['text'] ?></p>
                             <div class="stars">

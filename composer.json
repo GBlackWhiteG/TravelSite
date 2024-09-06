@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "frm\\": "vendor/frm/core/classes"
+    }
+  },
+  "require": { }
+}
