@@ -2,6 +2,8 @@
 
 use frm\Db;
 
+session_start();
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 require_once dirname(__DIR__) . '/config/config.php';

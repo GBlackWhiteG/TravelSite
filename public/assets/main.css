@@ -241,12 +241,14 @@ h2 {
     top: 100px;
 }
 
+/* Поменять на wrapper */
 .routes-page .container, .reviews-page .container, .news-page .container, .account-page .container, .admin-page .container {
     min-height: 80vh;
     width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
     background-color: var(--content-block-bgcolor);
     padding: 50px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* ROUTES */
@@ -489,4 +491,26 @@ h2 {
 
 .table-row__admin .btn {
     width: 100%;
+}
+
+
+
+/* ALERT */
+.alert {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.alert .container {
+    height: auto;
+}
+
+.alert-success {
+    background-color: #006400FF;
+}
+
+.alert-error {
+    background-color: #8B0000FF;
 }

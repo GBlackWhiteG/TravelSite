@@ -3,6 +3,13 @@
 function dump($data): void
 {
     echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
+}
+
+function print_arr($data): void
+{
+    echo "<pre>";
     print_r($data);
     echo "</pre>";
 }
@@ -25,14 +32,15 @@ function load($fillable = []): array
     $data = [];
     foreach ($_POST as $k => $v) {
         if (in_array($k, $fillable)) {
-             $data[$k] = trim($v);
+            $data[$k] = trim($v);
         }
     }
 
     return $data;
 }
 
-function h($str) {
+function h($str)
+{
     return htmlspecialchars($str, ENT_QUOTES);
 }
 
@@ -49,4 +57,16 @@ function redirect($url = ''): void
 
     header("Location: {$url}");
     exit;
+}
+
+function get_alerts()
+{
+    if (isset($_SESSION['success'])) {
+        require_once VIEWS . '/incs/alert_success.php';
+        unset($_SESSION['success']);
+    }
+    if (isset($_SESSION['error'])) {
+        require_once VIEWS . '/incs/alert_error.php';
+        unset($_SESSION['error']);
+    }
 }

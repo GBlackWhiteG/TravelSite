@@ -4,31 +4,52 @@
  * @var Db $db
  */
 
+use frm\Db;
+use frm\Validator;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $fillable = ['title', 'short_desc', 'description', 'cost', 'img_url'];
     $data = load($fillable);
 
-    $errors = [];
-    if (empty($data['title'])) {
-        $errors['title'] = 'Title is required';
-    }
-    if (empty($data['short_desc'])) {
-        $errors['short_desc'] = 'Short description is required';
-    }
-    if (empty($data['description'])) {
-        $errors['description'] = 'Description is required';
-    }
-    if (empty($data['cost'])) {
-        $errors['cost'] = 'Cost is required';
-    }
-    if (empty($data['img_url'])) {
-        $errors['img_url'] = 'Image url is required';
+    $validator = new Validator();
+    $validation = $validator->validate($data, [
+        'title' => [
+            'required' => true,
+            'min' => 5,
+            'max' => 190,
+        ],
+        'short_desc' => [
+            'required' => true,
+            'min' => 10,
+            'max' => 190,
+        ],
+        'description' => [
+            'required' => true,
+            'min' => 10,
+            'max' => 1000,
+        ],
+        'cost' => [
+            'required' => true,
+        ],
+        'img_url' => [
+            'required' => true,
+        ]
+    ]);
+
+    if (!$validation->hasErrors()) {
+        if ($db->query("INSERT INTO routes (`title`, `short_desc`, `description`, `cost`, `img_url`) VALUES (:title, :short_desc, :description, :cost, :img_url)", $data)) {
+            $_SESSION['success'] = 'OK';
+        } else {
+            $_SESSION['error'] = 'DB Error';
+        }
+        redirect('/routes/create');
+    } else {
+        $errors = $validation->getErrors();
     }
 
     if (empty($errors)) {
-        $db->query("INSERT INTO routes (`title`, `short_desc`, `description`, `cost`, `img_url`) VALUES (:title, :short_desc, :description, :cost, :img_url)", $data);
-        redirect('/routes/create');
+
     }
 }
 
