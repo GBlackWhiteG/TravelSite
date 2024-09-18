@@ -15,7 +15,7 @@ require VIEWS . '/incs/nav.php' ?>
                 <?php get_alerts(); ?>
                 <div class="wrapper">
                     <h3>Добавить маршрут</h3>
-                    <form action="" method="POST" class="modal-wrapper">
+                    <form action="/routes" method="POST" class="modal-wrapper">
                         <label for="title">Название</label>
                         <input id="title" type="text" name="title" value="<?= old('title') ?>">
                         <?= isset($validation) ? $validation->listErrors('title') : '' ?>

@@ -1,6 +1,7 @@
 <?php
 
 use frm\Db;
+use frm\Router;
 
 session_start();
 
@@ -13,5 +14,10 @@ require_once CORE . '/funcs.php';
 $db_config = require_once CONFIG . '/db.php';
 $db = (Db::getInstance())->getConnection($db_config);
 
+$router = new Router();
+
 require_once CONFIG . '/routes.php';
-require_once CORE . '/router.php';
+
+$router->match();
+
+//require_once CORE . '/router.php';

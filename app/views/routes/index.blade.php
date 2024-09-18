@@ -7,7 +7,7 @@
                 <h2 class="">Маршруты</h2>
                 <ul class="routes-grid-layout">
                     <?php foreach ($routes_data as $route) : ?>
-                    <a href="route?id=<?= $route['id'] ?>">
+                    <a href="routes/show?id=<?= $route['id'] ?>">
                         <li class="routes-item">
                             <img src="<?= $route['img_url'] ?>" alt="route-img">
                             <div class="text-block__routes">

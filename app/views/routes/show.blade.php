@@ -5,8 +5,8 @@
         <section class="routes-page">
             <div class="container">
                 <h2 class="">Маршрут <?= $id ?></h2>
-                <p><?= $route['short_desc'] ?></p>
-                <p><?= $route['description'] ?></p>
+                <p><?= h($route['short_desc']) ?></p>
+                <p><?= h($route['description']) ?></p>
             </div>
         </section>
     </main>
