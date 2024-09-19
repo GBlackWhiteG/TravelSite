@@ -77,4 +77,9 @@ class Db
         return $res;
     }
 
+    public function rowCount(): int
+    {
+        return $this->stmt->rowCount();
+    }
+
 }
