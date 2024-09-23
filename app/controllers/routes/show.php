@@ -1,6 +1,6 @@
 <?php
 
-global $db;
+$db = db();
 
 /**
  * @var Db $db

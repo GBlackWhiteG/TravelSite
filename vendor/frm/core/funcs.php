@@ -70,3 +70,9 @@ function get_alerts()
         unset($_SESSION['error']);
     }
 }
+
+function db(): \frm\Db
+{
+    return \frm\App::get(\frm\Db::class);
+}
+
