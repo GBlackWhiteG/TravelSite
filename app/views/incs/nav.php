@@ -25,7 +25,7 @@
                     <a href="/reviews">Отзывы</a>
                     <a href="/news">Новости</a>
                 </div>
-                <a href="/signin">Вход</a>
+                <a href="/login">Вход</a>
             </div>
         </div>
     </nav>

@@ -21,6 +21,16 @@ class Router
 
         foreach ($this->routes as $route) {
             if (($route['uri'] === $this->uri) && ($route['method'] === strtoupper($this->method))) {
+
+                if ($route['middleware']) {
+                    $middleware = MIDDLEWARE[$route['middleware']] ?? false;
+                    if (!$middleware) {
+                        throw new \Exception("Incorrect middleware {$route['middleware']}");
+                    }
+
+                    (new $middleware)->handle();
+                }
+
                 require CONTROLLERS . "/{$route['controller']}";
                 $matches = true;
                 break;
@@ -31,34 +41,41 @@ class Router
         }
     }
 
-    public function add($uri, $controller, $method): void
+    public function only(string $middleware): Router
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $middleware;
+        return $this;
+    }
+
+    public function add($uri, $controller, $method): Router
     {
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
             'method' => $method,
+            'middleware' => null,
         ];
+
+        return $this;
     }
 
-    public function get($uri, $controller): void
+    public function get($uri, $controller): Router
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
     }
 
-    public function post($uri, $controller): void
+    public function post($uri, $controller): Router
     {
-        $this->add($uri, $controller, 'POST');
+        return $this->add($uri, $controller, 'POST');
     }
 
-    public function patch($uri, $controller): void
+    public function patch($uri, $controller): Router
     {
-        $this->add($uri, $controller, 'PATCH');
+        return $this->add($uri, $controller, 'PATCH');
     }
 
-
-    public function delete($uri, $controller): void
+    public function delete($uri, $controller): Router
     {
-        $this->add($uri, $controller, 'DELETE');
+        return $this->add($uri, $controller, 'DELETE');
     }
-
 }

@@ -1,9 +1,9 @@
 <div class="main-wrapper">
     <main>
-        <section class="signup-page">
+        <section class="register-page">
             <div class="container">
                 <h2>Регистрация</h2>
-                <span>Есть аккаунта? - <a href="signin">авторизоваться</a></span>
+                <span>Есть аккаунта? - <a href="login">авторизоваться</a></span>
             </div>
         </section>
     </main>
