@@ -86,4 +86,8 @@ class Db
         return $this->stmt->rowCount();
     }
 
+    public function columnCount(): int
+    {
+        return $this->stmt->fetchColumn();
+    }
 }

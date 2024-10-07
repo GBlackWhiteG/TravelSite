@@ -18,6 +18,7 @@
                     </a>
                     <?php endforeach; ?>
                 </ul>
+                <?= $pagination ?>
             </div>
         </section>
     </main>
